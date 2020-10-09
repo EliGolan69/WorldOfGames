@@ -45,5 +45,6 @@ class common():
 
     return user_input_number
 
+  # Please don't do it, its ugly! use cls module in python.
   def clean_screen(self):
     print('\n' * 100)
