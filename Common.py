@@ -1,3 +1,5 @@
+import os
+
 class common():
   def get_int_value(self):
     while True:
@@ -46,4 +48,4 @@ class common():
     return user_input_number
 
   def clean_screen(self):
-    print('\n' * 100)
+    os.system("cls")

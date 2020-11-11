@@ -1,6 +1,6 @@
 from Game import game
 from exchangeratesapi import Api
-
+#pip install python-exchangeratesapi
 
 class currency_roulette_game(game):
   def __init__(self, override_menu=''):
