@@ -15,7 +15,6 @@ class common():
       value = input()
       if type(value == float):
         try:
-          return float(value)  # in case user will type 33.4333fseffdd
           return float(value)  # in case user will type "33.4333fseffdd"
         except:
           print('Please enter only numeric')
