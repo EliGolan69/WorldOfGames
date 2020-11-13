@@ -10,10 +10,11 @@ class currency_roulette_game(game):
   def play(self, difficulty):
       self.difficulty = difficulty
       from_int, to_int =  self.__get_money_interval()
+      # private methods are single underscore, not double
       return self.__compare_results(master_number= self.__get_guess_from_user(), val_from_value= from_int, val_to_value= to_int)
 
   def get_menu(self):
-      if self.override_menu != '':
+      if self.override_menu != '': # in pythin its enough to just check "if self.override_menu:". it will mean it is not empty.
         return self.override_menu
       else:
         return "Currency Roulette - try and guess the value of a random amount of USD in ILS."

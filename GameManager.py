@@ -11,6 +11,7 @@ class game_manager(common):
       self.create_menu()
 
   def create_games_obj(self):
+    # why you create all games instnaces in advance? what if only 1 game will be played?
     new_game = guess_game()
     self.games.append(new_game)
     new_game = memory_game()
