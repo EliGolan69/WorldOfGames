@@ -9,15 +9,15 @@ class memory_game(game):
 
   def play(self, difficulty):
     self.difficulty = difficulty
-    return self.__is_list_equal(game_list = self.__generate_sequence(), user_list = self.__get_list_from_user())
+    return self._is_list_equal(game_list = self._generate_sequence(), user_list = self._get_list_from_user())
 
   def get_menu(self):
-      if self.override_menu != '':
+      if self.override_menu:
         return self.override_menu
       else:
         return "Memory Game - a sequence of numbers will appear for 1 second and you have to guess it back."
 
-  def __generate_sequence(self):
+  def _generate_sequence(self):
     secret_number = []
     for index in range(self.difficulty):
       secret_number.append(randrange(1, 101))
@@ -27,7 +27,7 @@ class memory_game(game):
     self.clean_screen()
     return secret_number
 
-  def __get_list_from_user(self):
+  def _get_list_from_user(self):
     user_enter_numbers = False
     user_number_list = []
     print('\n\nPlease try to guess the numbers.')
@@ -39,7 +39,7 @@ class memory_game(game):
 
     return user_number_list
 
-  def __is_list_equal(self, game_list, user_list):
+  def _is_list_equal(self, game_list, user_list):
     list_equal = True
     for number in game_list:
       if user_list.count(number) <= 0:

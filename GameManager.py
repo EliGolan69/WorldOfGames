@@ -1,7 +1,8 @@
 from GuessGame import guess_game
-from CurrencyRouletteGame import currency_roulette_game
+from CurrencyRouletteGame import Currency_Roulette_Game
 from MemoryGame import memory_game
 from Common import common
+from Score import Score
 
 class game_manager(common):
   def __init__(self):
@@ -9,13 +10,15 @@ class game_manager(common):
       self.text_menu = ''
       self.create_games_obj()
       self.create_menu()
+      self.game_score = Score()
 
+  # need to create all object to get the menu
   def create_games_obj(self):
     new_game = guess_game()
     self.games.append(new_game)
     new_game = memory_game()
     self.games.append(new_game)
-    new_game = currency_roulette_game('Currency Roulette - try and guess the value of a random amount of USD in ILS')
+    new_game = Currency_Roulette_Game('Currency Roulette - try and guess the value of a random amount of USD in ILS')
     self.games.append(new_game)
 
   def create_menu(self):
@@ -27,7 +30,10 @@ class game_manager(common):
       self.text_menu += new_line
 
   def play_game(self, game_obj, difficulty):
-    print(game_obj.play(difficulty= difficulty))
+    game_result = game_obj.play(difficulty=difficulty)
+    if game_result:
+      self.game_score.add_score(difficulty)
+    print(game_result)
 
   def show_main_menu(self):
     self.clean_screen()

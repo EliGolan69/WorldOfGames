@@ -11,7 +11,7 @@ class guess_game(game):
     return self.compare_results(master_number= self.secret_number, val_from_value= 1, val_to_value= difficulty)
 
   def get_menu(self):
-      if self.override_menu != '':
+      if self.override_menu:
         return self.override_menu
       else:
         return "Guess Game - guess a number and see if you chose like the computer."

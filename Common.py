@@ -1,6 +1,7 @@
 import os
 
 class common():
+
   def get_int_value(self):
     while True:
       value = input()
@@ -15,6 +16,7 @@ class common():
       if type(value == float):
         try:
           return float(value)  # in case user will type 33.4333fseffdd
+          return float(value)  # in case user will type "33.4333fseffdd"
         except:
           print('Please enter only numeric')
       elif type(value == int):
