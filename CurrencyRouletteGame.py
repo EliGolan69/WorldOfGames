@@ -1,9 +1,7 @@
 from Game import game
 from exchangeratesapi import Api
+#pip install python-exchangeratesapi
 
-# Classes usually written with CamelCase. ie CurrencyRoullete(Game):   
-# this applies to all classes not only this one.
-# also, in python when using class inheritence, you need to use something called super() to inherit "better". read about it.
 class currency_roulette_game(game):
   def __init__(self, override_menu=''):
       self.override_menu = override_menu

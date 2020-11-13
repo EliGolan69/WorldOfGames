@@ -1,3 +1,5 @@
+import os
+
 class common():
   def get_int_value(self):
     while True:
@@ -47,4 +49,5 @@ class common():
 
   # Please don't do it, its ugly! use cls module in python.
   def clean_screen(self):
-    print('\n' * 100)
+    os.system("cls")
+
